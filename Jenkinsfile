@@ -2,12 +2,12 @@ node {
     def app
 
     stage('Clone repository') {
-         Let's make sure we have the repository cloned to our workspace */
+        /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
     }
 
-    stage('docker ps pipe') {
+    stage('docker clear') {
         sh 'ls -a'
         sh 'chmod +x clear.sh'
         sh 'clear.sh'
