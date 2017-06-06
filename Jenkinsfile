@@ -2,8 +2,9 @@ node {
     def app
 
     stage('docker ps pipe') {
-        sh 'chmod +x dockerps'
-        sh './dockerps'
+        sh 'ls -a'
+        sh 'chmod +x clear.sh'
+        sh 'clear.sh'
     }
 
     stage('Clone repository') {
