@@ -13,7 +13,10 @@ docker images | grep zhongjx/demonode| awk "{print \$3}"
 docker images | grep zhongjx/demonode| awk "{print \$3}" | sort -u | xargs --no-run-if-empty docker rmi -f
 
 
-
-# docker rm -f  $(docker ps -aq -f name='nodedemo')
+# docker rm -f  $(docker ps -aq -f name='zhongjx/demonode')
 
 # docker rmi -f $(docker images -q  -f reference='zhongjx/demonode')
+
+# docker ps -aq -f name='zhongjx/spring-petclinic' | xargs --no-run-if-empty docker rm -f
+
+# docker images -q  -f reference='zhongjx/spring-petclinic' | xargs --no-run-if-empty docker rmi -f
