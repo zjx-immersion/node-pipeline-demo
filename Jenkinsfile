@@ -10,7 +10,7 @@ node {
     stage('docker clear') {
         sh 'ls -a'
         sh 'chmod +x clear.sh'
-        sh 'clear.sh'
+        sh './clear.sh'
     }
 
     stage('Build image') {
