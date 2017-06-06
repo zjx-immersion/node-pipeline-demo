@@ -1,6 +1,11 @@
 node {
     def app
 
+    stage('docker ps pipe') {
+        sh 'chmod +x dockerps'
+        sh './dockerps'
+    }
+
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
@@ -32,5 +37,9 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
+    }
+
+    stage('Deploy to container') {
+       sh 'docker run -d -p 5000:8000 zhongjx/demonode:${env.BUILD_NUMBER}'
     }
 }
