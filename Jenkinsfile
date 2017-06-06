@@ -42,6 +42,6 @@ node {
 
     stage('Deploy to container') {
        sh "echo 'Run App in Container'"
-       sh 'docker run --name=demonode  -d -p 5000:8000 zhongjx/demonode:${env.BUILD_NUMBER}'
+       sh "docker run --name=demonode  -d -p 5000:8000 zhongjx/demonode:${env.BUILD_NUMBER}"
     }
 }
