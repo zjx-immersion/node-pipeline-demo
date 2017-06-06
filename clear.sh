@@ -10,7 +10,7 @@ docker ps -a | grep zhongjx/demonode | awk "{print \$1}" | xargs --no-run-if-emp
 
 docker images | grep zhongjx/demonode| awk "{print \$3}" 
 
-docker images | grep zhongjx/demonode| awk "{print \$3}" | xargs --no-run-if-empty docker rmi -f
+docker images | grep zhongjx/demonode| awk "{print \$3}" | sort -u | xargs --no-run-if-empty docker rmi -f
 
 
 

@@ -8,9 +8,14 @@ node {
     }
 
     stage('docker clear') {
-        sh 'ls -a'
-        sh 'chmod +x clear.sh'
-        sh './clear.sh'
+        //sh 'ls -a'
+        //sh 'chmod +x clear.sh'
+        //sh './clear.sh'
+        script {
+            sh 'chmod +x clear.sh'
+            POM_VERSION = sh(script: "./clear.sh", returnStdout: true)
+            echo "${POM_VERSION}"
+        } 
     }
 
     stage('Build image') {
